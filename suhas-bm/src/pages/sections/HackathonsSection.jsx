@@ -40,8 +40,11 @@ const HackathonsSection = React.forwardRef(({ hackathons }, ref) => (
             <p className="text-white/70 text-sm leading-relaxed text-center">
               {item.desc}
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center justify-center">
               <span className={`mt-2 px-3 py-1 text-xs font-semibold rounded-full ${item.badge === 'solo' ? 'bg-orange-500/20 text-orange-500 border border-orange-400/40' : 'bg-green-500/20 text-green-500 border border-green-400/40'}`}>{item.badge === 'solo' ? 'solo' : 'team'}</span>
+              {item.scope && (
+                <span className={`mt-1 px-3 py-1 text-xs font-semibold rounded-full ${item.scope === 'national' ? 'bg-blue-500/20 text-blue-400 border border-blue-400/40' : 'bg-purple-500/20 text-purple-400 border border-purple-400/40'}`}>{item.scope}</span>
+              )}
             </div>
           </div>
           <div className="mt-4 text-center">

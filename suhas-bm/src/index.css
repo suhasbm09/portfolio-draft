@@ -63,3 +63,30 @@ html, body, #root {
 .animate-blink-cursor {
   animation: blinkCursor 1s step-end infinite;
 }
+
+/* Custom scrollbar styles for Other Projects */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #22d3ee #18181b;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #22d3ee 0%, #a78bfa 100%);
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #67e8f9 0%, #c4b5fd 100%);
+}
+@media (max-width: 640px) {
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 0 !important;
+    display: none !important;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    display: none !important;
+  }
+}

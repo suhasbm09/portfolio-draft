@@ -47,7 +47,7 @@ const HeroSection = React.forwardRef((props, ref) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          Execution-first engineer delivering impactful, production-grade solutions across AI, blockchain, and full-stack development. Passionate about owning the full product lifecycle ― from ideation and prototyping to deployment and optimization.
+          Execution-first engineer delivering impactful, production-grade solutions across AI, blockchain, and full-stack development. Passionate about owning the full product lifecycle - from ideation and prototyping to deployment and optimization.
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 items-center justify-center"
