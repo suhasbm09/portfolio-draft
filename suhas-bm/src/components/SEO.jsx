@@ -1,33 +1,41 @@
-import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 
 /**
- * SEO component for setting meta tags and page title.
- * Usage: <SEO title="Home" description="Portfolio of Suhas BM" />
+ * Sets document title and core meta tags without Helmet.
  */
 const SEO = ({ title, description, keywords, image, url }) => {
   const pageTitle = title ? `${title} | Suhas BM` : "Suhas BM";
   const metaDescription = description || "Suhas BM — building reliable data and product workflows end to end.";
   const metaImage = image || "/favicon-s.svg";
 
-  return (
-    <Helmet>
-      <title>{pageTitle}</title>
-      {metaDescription && <meta name="description" content={metaDescription} />}
-      {keywords && <meta name="keywords" content={keywords} />}
-      {/* Open Graph / Facebook */}
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:image" content={metaImage} />
-      {url && <meta property="og:url" content={url} />}
-      <meta property="og:type" content="website" />
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={metaImage} />
-    </Helmet>
-  );
+  if (typeof document !== "undefined") {
+    document.title = pageTitle;
+
+    const setMetaTag = (name, content, attr = "name") => {
+      if (!content) return;
+      let tag = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    setMetaTag("description", metaDescription);
+    setMetaTag("keywords", keywords);
+    setMetaTag("og:title", pageTitle, "property");
+    setMetaTag("og:description", metaDescription, "property");
+    setMetaTag("og:image", metaImage, "property");
+    setMetaTag("og:type", "website", "property");
+    setMetaTag("twitter:card", "summary_large_image");
+    setMetaTag("twitter:title", pageTitle);
+    setMetaTag("twitter:description", metaDescription);
+    setMetaTag("twitter:image", metaImage);
+    setMetaTag("og:url", url, "property");
+  }
+
+  return null;
 };
 
 SEO.propTypes = {
@@ -38,4 +46,4 @@ SEO.propTypes = {
   url: PropTypes.string,
 };
 
-export default SEO; 
+export default SEO;
