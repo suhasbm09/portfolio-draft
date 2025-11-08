@@ -36,7 +36,7 @@ const skillsGroups = [
   {
     title: "Data & Storage",
     description: "Where data lives, how it is modelled, and how it stays observable.",
-    items: ["MySQL", "MongoDB", "Supabase", "Firebase", "Pinata"]
+    items: ["MySQL", "MongoDB", "Firebase", "Pinata"]
   },
   {
     title: "Ops & Tooling",
