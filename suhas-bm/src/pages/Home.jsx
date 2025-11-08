@@ -1,8 +1,5 @@
 // src/pages/Home.jsx
 
-import { FaEnvelope, FaPhone, FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
@@ -13,29 +10,17 @@ const AboutSection = lazy(() => import("./sections/AboutSection"));
 const EducationSection = lazy(() => import("./sections/EducationSection"));
 const SkillsSection = lazy(() => import("./sections/SkillsSection"));
 const ProjectsSection = lazy(() => import("./sections/ProjectsSection"));
-const ArticlesSection = lazy(() => import("./sections/ArticlesSection"));
 const HackathonsSection = lazy(() => import("./sections/HackathonsSection"));
-const CertificatesSection = lazy(() => import("./sections/CertificatesSection"));
 const ContactSection = lazy(() => import("./sections/ContactSection"));
 
 const Home = () => {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  const [text] = useTypewriter({
-    words: ["Crafting Smart Contracts", "Building Intuitive Web Apps", "Solving Complex Challenges"],
-    loop: true,
-    delaySpeed: 2000,
-  });
 
   const educationItems = [
     {
       title: "B.E. Computer Science & Engineering",
       institute: "National Institute of Engineering, Mysuru",
-      detail: "GPA 9.3/10 (2022 – Present)",
+      detail: "GPA 9.24/10 (2022 – Present)",
       isCurrent: true,
     },
     {
@@ -319,8 +304,8 @@ const Home = () => {
     <>
       <SEO
         title="Home"
-        description="Portfolio of Suhas BM - Blockchain, Web, and AI Developer. Explore projects, skills, education, and contact information."
-        keywords="Suhas BM, Portfolio, Blockchain, Web Developer, AI, Projects, Skills, Education"
+        description="Suhas BM is an engineer focused on data pipelines, product delivery, and end-to-end workflows. Explore selected projects, skills, and ways to collaborate."
+        keywords="Suhas BM, data engineering, product engineering, full stack, portfolio"
         url="https://your-portfolio-url.com/"
       />
       <div ref={containerRef} className="relative space-y-32">
@@ -328,10 +313,8 @@ const Home = () => {
         <Suspense fallback={<div className="h-32" />}> <AboutSection /> </Suspense>
         <Suspense fallback={<div className="h-32" />}> <EducationSection educationItems={educationItems} /> </Suspense>
         <Suspense fallback={<div className="h-32" />}> <SkillsSection skillsGroups={skillsGroups} /> </Suspense>
-        <Suspense fallback={<div className="h-32" />}> <ProjectsSection projects={projects} otherProjects={otherProjects} /> </Suspense>
-        <Suspense fallback={<div className="h-32" />}> <ArticlesSection /> </Suspense>
-        <Suspense fallback={<div className="h-32" />}> <HackathonsSection hackathons={hackathons} /> </Suspense>
-        <Suspense fallback={<div className="h-32" />}> <CertificatesSection /> </Suspense>
+  <Suspense fallback={<div className="h-32" />}> <ProjectsSection projects={projects} otherProjects={otherProjects} /> </Suspense>
+  <Suspense fallback={<div className="h-32" />}> <HackathonsSection hackathons={hackathons} /> </Suspense>
         <Suspense fallback={<div className="h-32" />}> <ContactSection /> </Suspense>
       </div>
     </>

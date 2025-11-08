@@ -6,12 +6,12 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 const HeroSection = React.forwardRef((props, ref) => {
   const [text] = useTypewriter({
     words: [
-      "Crafting Smart Contracts",
-      "Building Intuitive Web Apps",
-      "Solving Complex Challenges",
+      "Designing resilient data pipelines",
+      "Delivering thoughtful product workflows",
+      "Turning ideas into measurable outcomes",
     ],
     loop: true,
-    delaySpeed: 2000,
+    delaySpeed: 2200,
   });
 
   return (
@@ -27,12 +27,12 @@ const HeroSection = React.forwardRef((props, ref) => {
         className="text-center space-y-8 max-w-5xl mx-auto px-4"
       >
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-          <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_2px_16px_rgba(34,211,238,0.5)]">
+          <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 bg-clip-text text-transparent">
             Hi, I'm Suhas B M
           </span>
         </h1>
         <motion.p
-          className="text-2xl md:text-3xl text-cyan-200 flex items-center justify-center gap-2"
+          className="text-2xl md:text-3xl text-cyan-200/90 flex items-center justify-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -42,12 +42,12 @@ const HeroSection = React.forwardRef((props, ref) => {
         </motion.p>
         <div className="h-px bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-transparent w-48 mx-auto" />
         <motion.p
-          className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          Execution-first engineer delivering impactful, production-grade solutions across AI, blockchain, and full-stack development. Passionate about owning the full product lifecycle - from ideation and prototyping to deployment and optimization.
+          Engineering generalist with a bias for clarity and delivery. I design the connective tissue between data platforms and product surfaces—owning discovery, build-out, and steady-state operations so teams can ship with confidence.
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 items-center justify-center"
@@ -67,7 +67,7 @@ const HeroSection = React.forwardRef((props, ref) => {
             <FaArrowDown className="inline-block ml-2 transform group-hover:translate-y-1 transition-transform" />
           </a>
           <a
-            href="https://drive.google.com/file/d/1cPYy5SuwtrQuSkozuLZvFKwilcfenMTb/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1XnbwTBoMr8RKz5QHff0q4wqJhhzgfmEc/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="group px-8 py-4 text-lg font-medium rounded-full \

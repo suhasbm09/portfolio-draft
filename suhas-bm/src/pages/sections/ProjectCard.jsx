@@ -1,84 +1,63 @@
-import React, { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FaGithub, FaArrowRight } from "react-icons/fa";
 
 function ProjectCard({ proj }) {
   const [hasImage, setHasImage] = useState(true);
-  const cardRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
-  const navigate = useNavigate();
 
   return (
-    <motion.div
-      ref={cardRef}
-      style={{ y, opacity }}
-      className={`
-        group relative
-        flex flex-col 
-        ${hasImage ? "lg:flex-row" : ""} 
-        items-center bg-black/40 backdrop-blur-xl rounded-2xl border border-cyan-400/20 
-        overflow-hidden hover:scale-[1.02] transition-all duration-500
-        shadow-xl hover:shadow-cyan-500/20 cursor-pointer
-      `}
-      onClick={() => navigate(`/project/${proj.key}`)}
+    <motion.article
+      layout
+      whileHover={{ translateY: -4 }}
+      className="group bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden flex flex-col h-full"
     >
-      {/* Image column with overlay */}
       {hasImage && (
-        <div className="relative w-full lg:w-1/3 h-48 lg:h-auto flex-shrink-0 overflow-hidden">
-          <div className="absolute inset-0 bg-cyan-400/10 mix-blend-overlay" />
+        <div className="relative h-52 overflow-hidden">
           <img
             src={proj.image ? proj.image : `/images/${proj.key}.png`}
             alt={`${proj.title} preview`}
             loading="lazy"
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             onError={() => setHasImage(false)}
           />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
         </div>
       )}
-
-      {/* Content column */}
-      <div className={`
-        w-full ${hasImage ? "lg:w-2/3" : ""} p-8 space-y-4
-        relative z-10
-      `}>
-        <h3 className="text-3xl font-semibold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-          {proj.title}
-        </h3>
-        <p className="text-white/80 text-base lg:text-lg leading-relaxed">
-          {proj.desc}
-        </p>
-        <div className="flex flex-wrap gap-3">
+      <div className="flex flex-col gap-4 p-6 flex-1">
+        <h3 className="text-2xl font-semibold text-cyan-100">{proj.title}</h3>
+        <p className="text-white/70 text-sm leading-relaxed">{proj.desc}</p>
+        <div className="flex flex-wrap gap-2">
           {proj.tech.map((t) => (
-            <span 
-              key={t} 
-              className="px-3 py-1 text-xs lg:text-sm rounded-full 
-                bg-cyan-400/10 text-cyan-200 border border-cyan-400/20
-                backdrop-blur-sm hover:bg-cyan-400/20 transition-colors"
+            <span
+              key={t}
+              className="px-3 py-1 text-xs rounded-full bg-white/5 text-white/70 border border-white/10"
             >
               {t}
             </span>
           ))}
         </div>
-        <a
-          href={proj.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-4 text-lg font-medium 
-            text-cyan-300 hover:text-purple-300 transition-colors
-            group-hover:translate-x-2 duration-300"
-        >
-          View on GitHub 
-          <FaGithub className="transform group-hover:rotate-12 transition-transform" />
-        </a>
+        <div className="mt-auto flex flex-wrap gap-3 pt-4 border-t border-white/5">
+          <a
+            href={proj.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-cyan-200 hover:text-cyan-100 transition-colors"
+          >
+            <FaGithub />
+            Code
+          </a>
+          <Link
+            to={`/project/${proj.key}`}
+            className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
+            aria-label={`Read more about ${proj.title}`}
+          >
+            Case study
+            <FaArrowRight className="text-xs" />
+          </Link>
+        </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }
 
