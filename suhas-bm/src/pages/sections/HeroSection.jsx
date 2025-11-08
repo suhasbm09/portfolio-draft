@@ -47,7 +47,7 @@ const HeroSection = React.forwardRef((props, ref) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          Engineering generalist with a bias for clarity and delivery. I design the connective tissue between data platforms and product surfaces—owning discovery, build-out, and steady-state operations so teams can ship with confidence.
+          Engineering generalist with a bias for clarity and delivery. I design the connective tissue between data platforms and product surfaces-owning discovery, build-out, and steady-state operations so teams can ship with confidence.
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 items-center justify-center"

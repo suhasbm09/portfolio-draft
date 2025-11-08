@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
  */
 const SEO = ({ title, description, keywords, image, url }) => {
   const pageTitle = title ? `${title} | Suhas BM` : "Suhas BM";
-  const metaDescription = description || "Suhas BM — building reliable data and product workflows end to end.";
+  const metaDescription = description || "Suhas BM - building reliable data and product workflows end to end.";
   const metaImage = image || "/favicon-s.svg";
 
   if (typeof document !== "undefined") {

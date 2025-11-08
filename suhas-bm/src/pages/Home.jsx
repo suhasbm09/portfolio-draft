@@ -51,7 +51,7 @@ const Home = () => {
       link: "https://github.com/suhasbm09/SKILL_FLEX",
       inDepth: {
         overview: `SkillFlex is a decentralized, AI-powered credentialing platform that lets users prove their skills and mint non-transferable (soulbound) NFT credentials on Solana. It features instant AI evaluation, a Monaco code editor, and a modern glassmorphic UI.`,
-        motivation: `Traditional credentials are slow, centralized, and hard to verify. SkillFlex provides instant, immutable proof of skill—owned by the user, verifiable by anyone, and shareable anywhere.`,
+  motivation: `Traditional credentials are slow, centralized, and hard to verify. SkillFlex provides instant, immutable proof of skill-owned by the user, verifiable by anyone, and shareable anywhere.`,
         howItWorks: [
           "Choose a coding or text challenge.",
           "Submit your answer using a Monaco-powered editor (code, text, or file).",
