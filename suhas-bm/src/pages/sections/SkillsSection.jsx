@@ -26,7 +26,7 @@ const skillsGroups = [
   {
     title: "Languages & Runtimes",
     description: "Typed and scripting languages used across services, smart contracts, and tooling.",
-    items: ["TypeScript", "JavaScript", "Python", "Rust", "C++"]
+    items: [ "C++", "Python","JavaScript", "Rust"]
   },
   {
     title: "Frameworks & Libraries",
