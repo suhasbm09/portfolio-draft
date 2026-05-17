@@ -7,29 +7,16 @@ import ThemeBackground from "./ThemeBackground";
 
 const Layout = () => {
   return (
-    <div className="relative flex flex-col min-h-screen text-white/90 antialiased">
-      {/* Global Background Layer */}
+    <div className="relative min-h-screen overflow-x-hidden text-white antialiased">
       <ThemeBackground />
 
-      {/* Content Container with Dark Glass Effect */}
-      <div className="relative flex flex-col min-h-screen">
-        {/* Floating Header with Dark Glass Effect */}
-        <div className="sticky top-0 z-50 backdrop-blur-md bg-black/20 border-b border-white/5">
-          <Header />
-        </div>
+      <Header />
 
-        {/* Main Content */}
-        <main className="relative flex-1 px-4 md:px-8 lg:px-16 py-8">
-          <div className="max-w-7xl mx-auto">
-            <Outlet />
-          </div>
-        </main>
+      <main className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pt-10 pb-14 md:px-6 lg:px-8">
+        <Outlet />
+      </main>
 
-        {/* Footer with Dark Glass Effect */}
-        {/* <div className="relative backdrop-blur-md bg-black/20 border-t border-white/5"> */}
-          <Footer />
-        {/* </div> */}
-      </div>
+      <Footer />
     </div>
   );
 };

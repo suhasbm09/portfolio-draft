@@ -1,53 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaPython, FaDocker, FaRust, FaDatabase, FaJs, FaGitAlt, FaLinux } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb, SiFirebase, SiTypescript, SiFlask, SiJenkins, SiSupabase } from "react-icons/si";
-
-const skillIcons = {
-  React: <FaReact className="text-cyan-300" />, 
-  "Node.js": <FaNodeJs className="text-green-400" />, 
-  Python: <FaPython className="text-yellow-300" />, 
-  Docker: <FaDocker className="text-blue-400" />, 
-  Rust: <FaRust className="text-orange-400" />, 
-  MongoDB: <SiMongodb className="text-green-500" />, 
-  MySQL: <FaDatabase className="text-blue-300" />, 
-  JavaScript: <FaJs className="text-yellow-200" />,  
-  Git: <FaGitAlt className="text-orange-300" />, 
-  Linux: <FaLinux className="text-gray-300" />, 
-  TailwindCSS: <SiTailwindcss className="text-cyan-400" />, 
-  Firebase: <SiFirebase className="text-yellow-400" />, 
-  Flask: <SiFlask className="text-gray-200" />, 
-  Jenkins: <SiJenkins className="text-red-400" />, 
-  TypeScript: <SiTypescript className="text-blue-400" />,
-  Supabase: <SiSupabase className="text-emerald-300" />,
-};
-
-const skillsGroups = [
-  {
-    title: "Languages & Runtimes",
-    description: "Typed and scripting languages used across services, smart contracts, and tooling.",
-    items: [ "C++", "Python","JavaScript", "Rust"]
-  },
-  {
-    title: "Frameworks & Libraries",
-    description: "Frontend, backend, and on-chain stacks for building usable products.",
-    items: ["React", "Flask", "Node.js", "Anchor", "Metaplex", "TailwindCSS"]
-  },
-  {
-    title: "Data & Storage",
-    description: "Where data lives, how it is modelled, and how it stays observable.",
-    items: ["MySQL", "MongoDB", "Firebase", "Pinata"]
-  },
-  {
-    title: "Ops & Tooling",
-    description: "Automation, deployment, and developer experience helpers.",
-    items: ["Docker", "Jenkins", "Git", "Linux", "Solana CLI"]
-  }
-];
+import { motion as Motion } from "framer-motion";
+import { stackGroups } from "../../data/portfolio";
 
 const SkillsSection = React.forwardRef((props, ref) => (
-  <motion.section
-    id="skills"
+  <Motion.section
+    id="stack"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -56,28 +13,25 @@ const SkillsSection = React.forwardRef((props, ref) => (
     aria-labelledby="skills-heading"
     ref={ref}
   >
-    <h2 id="skills-heading" className="text-4xl font-semibold mb-4 bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 bg-clip-text text-transparent text-center">
-      Skills
+    <h2 id="skills-heading" className="text-center text-4xl font-semibold tracking-tight text-white md:text-5xl">
+      Core stack
     </h2>
-    <div className="h-px bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-transparent my-8 w-24 mx-auto" />
-    <div className="px-4 space-y-8">
-      <p className="text-center text-white/70 text-base max-w-2xl mx-auto">
-        Each engagement starts with mapping the flow end to end-from ingestion jobs to the UI touchpoint-so the tooling below gets wired together with intention, not novelty.
+    <div className="mx-auto my-8 h-px w-24 bg-linear-to-r from-transparent via-white/30 to-transparent" />
+    <div className="space-y-8">
+      <p className="mx-auto max-w-3xl text-center text-base leading-7 text-white/65">
+        The stack below is split between backend systems, Solana programs, and delivery tooling.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {skillsGroups.map((grp) => (
-          <div key={grp.title} className="rounded-2xl border border-white/10 bg-black/40 p-6 flex flex-col gap-4">
-            <div>
-              <h3 className="text-xl font-semibold text-cyan-200">{grp.title}</h3>
-              {grp.description && (
-                <p className="mt-2 text-sm text-white/60 leading-relaxed">{grp.description}</p>
-              )}
-            </div>
-            <div className="flex flex-wrap gap-2">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {stackGroups.map((grp) => (
+          <div key={grp.title} className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:bg-white/[0.05]">
+            <div className="absolute inset-0 bg-linear-to-br from-cyan-400/0 via-transparent to-indigo-400/0 opacity-0 transition group-hover:opacity-100" />
+            <p className="text-xs uppercase tracking-[0.35em] text-white/38">{grp.icon}</p>
+            <h3 className="mt-3 text-xl font-semibold text-white">{grp.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-white/62">{grp.note}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
               {grp.items.map((skill) => (
-                <span key={skill} className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-full bg-white/5 text-white/80 border border-white/10">
-                  {skillIcons[skill] && <span className="text-lg">{skillIcons[skill]}</span>}
-                  <span>{skill}</span>
+                <span key={skill} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-white/75">
+                  {skill}
                 </span>
               ))}
             </div>
@@ -85,24 +39,27 @@ const SkillsSection = React.forwardRef((props, ref) => (
         ))}
       </div>
     </div>
-    <div className="mt-16">
-      <h3 className="text-2xl font-semibold mb-4 text-cyan-200 text-center">Relevant Coursework</h3>
-      <div className="flex flex-wrap gap-3 justify-center px-4">
+    <div className="mt-16 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 text-center backdrop-blur-xl">
+      <h3 className="text-2xl font-semibold text-white">How I work</h3>
+      <p className="mx-auto mt-3 max-w-3xl text-white/62">
+        Build the core service first, keep the data trustworthy, and only then layer presentation on top.
+      </p>
+      <div className="mt-6 flex flex-wrap justify-center gap-3">
         {[
-          "Distributed Systems",
-          "Software Engineering",
-          "Machine Learning",
-          "Database Concepts",
-          "Computer Networks",
-          "Cloud Computing"
-        ].map((topic) => (
-          <span key={topic} className="px-4 py-2 text-sm rounded-full bg-white/5 text-white/70 border border-white/10">
-            {topic}
+          "Backend systems",
+          "Solana programs",
+          "Data integrity",
+          "Auditability",
+          "Maintainability",
+          "Clear interfaces"
+        ].map((item) => (
+          <span key={item} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/78">
+            {item}
           </span>
         ))}
       </div>
     </div>
-  </motion.section>
+  </Motion.section>
 ));
 
 export default SkillsSection; 

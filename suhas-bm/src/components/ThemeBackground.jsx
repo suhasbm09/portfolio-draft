@@ -1,59 +1,29 @@
 // src/components/ThemeBackground.jsx
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion as Motion } from "framer-motion";
 
 const ThemeBackground = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  // Parallax for orbs
-  const orb1Y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const orb2Y = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
-
   return (
-    <div ref={containerRef} className="fixed inset-0 -z-10">
-      {/* Pure black base */}
-      <div className="absolute inset-0 bg-black" />
-
-      {/* Neon radial gradients (darker, less intense) */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Cyan top left */}
-        <div className="absolute -top-1/4 -left-1/4 w-[70vw] h-[70vw] bg-[radial-gradient(circle,rgba(0,255,213,0.10)_0%,transparent_70%)]" />
-        {/* Purple bottom right */}
-        <div className="absolute -bottom-1/4 -right-1/4 w-[70vw] h-[70vw] bg-[radial-gradient(circle,rgba(168,85,247,0.08)_0%,transparent_70%)]" />
-        {/* Blue center */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[radial-gradient(circle,rgba(56,189,248,0.06)_0%,transparent_80%)]" />
-      </div>
-
-      {/* Animated neon orbs (darker, less intense) */}
-      <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full bg-cyan-400/10 blur-[120px]"
-        style={{ top: "-200px", left: "-200px", y: orb1Y }}
-        animate={{ x: [0, 100, 0] }}
+    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#05070b]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.08),transparent_30%),radial-gradient(circle_at_82%_16%,rgba(129,140,248,0.08),transparent_26%),radial-gradient(circle_at_bottom,rgba(34,197,94,0.04),transparent_34%)]" />
+      <Motion.div
+        className="absolute left-1/2 top-[-10rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[conic-gradient(from_180deg,rgba(103,232,249,0.18),rgba(139,92,246,0.16),rgba(52,211,153,0.14),rgba(103,232,249,0.18))] blur-[150px] opacity-45"
+        animate={{ y: [0, 18, 0], rotate: [0, 8, 0] }}
         transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full bg-purple-500/10 blur-[120px]"
-        style={{ bottom: "-200px", right: "-200px", y: orb2Y }}
-        animate={{ x: [0, -100, 0] }}
-        transition={{ duration: 35, repeat: Infinity, ease: "easeInOut" }}
+      <Motion.div
+        className="absolute -left-24 top-[18%] h-[24rem] w-[24rem] rounded-full bg-cyan-300/10 blur-[140px]"
+        animate={{ x: [0, 40, 0], y: [0, 10, 0] }}
+        transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
       />
-
-      {/* Subtle noise overlay */}
-      <div
-        className="absolute inset-0 opacity-20 mix-blend-soft-light pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '200px 200px',
-        }}
+      <Motion.div
+        className="absolute -right-24 top-[28%] h-[28rem] w-[28rem] rounded-full bg-violet-400/10 blur-[150px]"
+        animate={{ x: [0, -36, 0], y: [0, -14, 0] }}
+        transition={{ duration: 32, repeat: Infinity, ease: "easeInOut" }}
       />
-
-      {/* Stronger vignette for more focus and darkness */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.96)_100%)] pointer-events-none" />
+      <div className="absolute inset-x-0 top-[14%] h-[18rem] bg-[linear-gradient(105deg,transparent_34%,rgba(255,255,255,0.06)_50%,transparent_66%)] opacity-20 blur-2xl" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.016)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.016)_1px,transparent_1px)] bg-size-[120px_120px] opacity-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_28%,rgba(5,7,11,0.96)_100%)]" />
     </div>
   );
 };

@@ -1,11 +1,22 @@
 import React from "react";
+import { principles } from "../../data/portfolio";
 
 const ArticlesSection = React.forwardRef((props, ref) => (
-  <section id="articles" className="py-24" ref={ref}>
-    <div className="max-w-4xl mx-auto px-4 text-center">
-      <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Articles</h2>
-      <div className="h-px bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-transparent my-8 w-24 mx-auto" />
-      <p className="text-white/70 text-lg">Articles will be displayed here soon!</p>
+  <section id="about-philosophy" className="py-24" ref={ref}>
+    <div className="mx-auto max-w-3xl text-center">
+      <p className="text-xs uppercase tracking-[0.45em] text-white/40">Operating principles</p>
+      <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">How I think about good systems.</h2>
+      <p className="mt-5 text-base leading-7 text-white/65">
+        The same patterns keep showing up across backend, blockchain, and product work.
+      </p>
+    </div>
+    <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-3">
+      {principles.map((item) => (
+        <div key={item.title} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+          <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+          <p className="mt-3 text-sm leading-7 text-white/65">{item.copy}</p>
+        </div>
+      ))}
     </div>
   </section>
 ));

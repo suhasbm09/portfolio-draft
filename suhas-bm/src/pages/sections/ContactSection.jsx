@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaGithub, FaLinkedin } from "react-icons/fa";
+import { brand, contact } from "../../data/portfolio";
 
 const ContactSection = React.forwardRef((props, ref) => (
   <section
@@ -8,105 +9,76 @@ const ContactSection = React.forwardRef((props, ref) => (
     className="relative py-24"
     ref={ref}
   >
-    <div className="relative max-w-4xl mx-auto px-4">
-      <motion.h2
-        className="text-4xl font-semibold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+    <div className="relative mx-auto max-w-5xl px-4">
+      <Motion.h2
+        className="text-center text-4xl font-semibold tracking-tight text-white md:text-5xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span>
-          Let's build something impactful
-        </span>
-      </motion.h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <motion.div
-          className="group p-8 bg-black/40 backdrop-blur-xl rounded-2xl border border-cyan-400/20 \
-            hover:border-cyan-400/50 transition-all duration-500
-            hover:shadow-lg hover:shadow-cyan-500/20"
-          whileHover={{ scale: 1.02 }}
+        Ready for backend and Solana conversations.
+      </Motion.h2>
+      <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-7 text-white/65">
+        {contact.summary}
+      </p>
+      <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <Motion.div
+          className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl"
+          whileHover={{ y: -4 }}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <FaEnvelope className="text-4xl text-cyan-400 mb-4 transform group-hover:rotate-12 transition-transform" />
-          <h3 className="text-xl font-semibold text-cyan-200 mb-2">Email Me</h3>
-          <a
-            href="mailto:suhaasbm2004@gmail.com"
-            className="text-white/70 hover:text-cyan-300 transition-colors block"
-          >
-            suhaasbm2004@gmail.com
-          </a>
-        </motion.div>
-        <motion.div
-          className="group p-8 bg-black/40 backdrop-blur-xl rounded-2xl border border-cyan-400/20 \
-            hover:border-purple-400/50 transition-all duration-500
-            hover:shadow-lg hover:shadow-purple-500/20"
+          <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/75">
+            Direct line
+          </div>
+          <h3 className="mt-6 text-3xl font-semibold text-white">Open for roles, reviews, and focused collaborations.</h3>
+          <p className="mt-4 max-w-xl text-white/65">If the work needs backend depth, Solana logic, or a product-minded finish, the conversation can start here.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <a href={`mailto:${brand.email}`} className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-4 transition hover:border-white/20 hover:bg-white/[0.06]">
+              <FaEnvelope className="text-2xl text-cyan-300" />
+              <p className="mt-3 text-sm uppercase tracking-[0.35em] text-white/35">Email</p>
+              <p className="mt-2 text-white/80">{brand.email}</p>
+            </a>
+            <a href={`tel:${brand.phone.replace(/\s/g, "")}`} className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-4 transition hover:border-white/20 hover:bg-white/[0.06]">
+              <FaPhone className="text-2xl text-cyan-300" />
+              <p className="mt-3 text-sm uppercase tracking-[0.35em] text-white/35">Phone</p>
+              <p className="mt-2 text-white/80">{brand.phone}</p>
+            </a>
+          </div>
+        </Motion.div>
+
+        <Motion.div
+          className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl"
           whileHover={{ scale: 1.02 }}
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <FaPhone className="text-4xl text-cyan-400 mb-4 transform group-hover:rotate-12 transition-transform" />
-          <h3 className="text-xl font-semibold text-cyan-200 mb-2">Call Me</h3>
-          <a
-            href="tel:+919036751497"
-            className="text-white/70 hover:text-cyan-300 transition-colors block"
-          >
-            +91 9036751497
-          </a>
-        </motion.div>
+          <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/50">
+            Elsewhere
+          </div>
+          <h3 className="mt-6 text-2xl font-semibold text-white">Find the work, then the person behind it.</h3>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href={brand.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]"
+            >
+              <FaGithub className="text-lg text-cyan-300" /> GitHub
+            </a>
+            <a
+              href={brand.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]"
+            >
+              <FaLinkedin className="text-lg text-cyan-300" /> LinkedIn
+            </a>
+          </div>
+        </Motion.div>
       </div>
-      <motion.div
-        className="mt-12 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <a
-          href="mailto:suhaasbm2004@gmail.com"
-          className="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium \
-            rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 \
-            hover:from-cyan-500 hover:to-purple-600 \
-            text-white shadow-lg hover:shadow-cyan-500/25 \
-            transition-all duration-300 transform hover:-translate-y-1"
-        >
-          Reach Out
-          <FaEnvelope className="transform group-hover:rotate-12 transition-transform" />
-        </a>
-      </motion.div>
-      {/* Social Links */}
-      <motion.div
-        className="mt-12 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-      >
-        <h3 className="text-xl font-semibold text-cyan-200 mb-6">Connect With Me</h3>
-        <div className="flex justify-center gap-6">
-          <a
-            href="https://github.com/suhasbm09"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-4 bg-black/40 backdrop-blur-xl rounded-full border border-cyan-400/20 \
-              hover:border-cyan-400/50 transition-all duration-300
-              hover:shadow-lg hover:shadow-cyan-500/20 transform hover:scale-110"
-          >
-            <FaGithub className="text-2xl text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-          </a>
-          <a
-            href="https://linkedin.com/in/suhasbm09"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-4 bg-black/40 backdrop-blur-xl rounded-full border border-cyan-400/20 \
-              hover:border-cyan-400/50 transition-all duration-300
-              hover:shadow-lg hover:shadow-cyan-500/20 transform hover:scale-110"
-          >
-            <FaLinkedin className="text-2xl text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-          </a>
-        </div>
-      </motion.div>
     </div>
   </section>
 ));

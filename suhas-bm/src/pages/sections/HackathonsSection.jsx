@@ -1,9 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
+import { milestones } from "../../data/portfolio";
 
-const HackathonsSection = React.forwardRef(({ hackathons }, ref) => (
-  <motion.section
-    id="hackathons"
+const HackathonsSection = React.forwardRef((props, ref) => (
+  <Motion.section
+    id="milestones"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -12,34 +13,25 @@ const HackathonsSection = React.forwardRef(({ hackathons }, ref) => (
     aria-labelledby="hackathons-heading"
     ref={ref}
   >
-    <h2 id="hackathons-heading" className="text-4xl font-semibold mb-4 bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 bg-clip-text text-transparent text-center">
-      Hackathons & Challenges
-    </h2>
-    <div className="h-px bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-transparent my-8 w-24 mx-auto" />
-    <p className="max-w-3xl mx-auto text-center text-white/70 text-base px-4">
-      Rapid-build environments that helped pressure-test processes and sharpen decision making. The learnings ship back into daily delivery.
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 mt-12">
-      {hackathons.map((item, idx) => (
-        <div key={idx} className="bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10 p-6 flex flex-col gap-4">
-          <div>
-            <p className="text-sm font-medium text-cyan-200 uppercase tracking-wide">{item.status}</p>
-            <h3 className="mt-2 text-xl font-semibold text-white/80">{item.title}</h3>
-            <p className="text-white/60 text-sm">{item.subtitle}</p>
-          </div>
-          <p className="text-white/60 text-sm leading-relaxed flex-1">{item.desc}</p>
-          <div className="flex items-center gap-3 text-xs text-white/60">
-            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 uppercase tracking-wide">{item.badge}</span>
-            {item.scope && (
-              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 uppercase tracking-wide">
-                {item.scope.replace('-', ' ')}
-              </span>
-            )}
-          </div>
+    <div className="mx-auto max-w-3xl text-center">
+      <p className="text-xs uppercase tracking-[0.45em] text-white/40">Milestones</p>
+      <h2 id="hackathons-heading" className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+        Moments that sharpened the portfolio.
+      </h2>
+      <p className="mt-5 text-base leading-7 text-white/65">
+        Competition builds speed, constraints, and resilience—qualities that show up in the final product.
+      </p>
+    </div>
+    <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">
+      {milestones.map((item) => (
+        <div key={item.title} className="rounded-3xl border border-white/10 bg-black/40 p-6 backdrop-blur-2xl">
+          <p className="text-xs uppercase tracking-[0.35em] text-cyan-100/45">{item.badge}</p>
+          <h3 className="mt-3 text-2xl font-semibold text-white">{item.title}</h3>
+          <p className="mt-3 text-sm leading-7 text-white/65">{item.detail}</p>
         </div>
       ))}
     </div>
-  </motion.section>
+  </Motion.section>
 ));
 
 export default HackathonsSection; 

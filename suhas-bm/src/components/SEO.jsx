@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import { brand } from "../data/portfolio";
 
 /**
  * Sets document title and core meta tags without Helmet.
  */
 const SEO = ({ title, description, keywords, image, url }) => {
-  const pageTitle = title ? `${title} | Suhas BM` : "Suhas BM";
-  const metaDescription = description || "Suhas BM - building reliable data and product workflows end to end.";
-  const metaImage = image || "/favicon-s.svg";
+  const pageTitle = title || brand.name;
+  const metaDescription = description || "Backend engineer and Solana builder focused on reliable APIs, on-chain systems, and product delivery.";
+  const metaImage = image || "/images/profile.png";
 
   if (typeof document !== "undefined") {
     document.title = pageTitle;
