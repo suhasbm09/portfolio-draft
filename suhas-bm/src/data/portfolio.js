@@ -6,7 +6,7 @@ export const brand = {
   phone: "+91 9036751497",
   github: "https://github.com/suhasbm09",
   linkedin: "https://www.linkedin.com/in/suhas-b-m-88a179244",
-  resume: "https://drive.google.com/file/d/1XnbwTBoMr8RKz5QHff0q4wqJhhzgfmEc/view?usp=drive_link",
+  resume: "https://drive.google.com/file/d/1k_jTRUNPB7WeF9ulcDXZxeXltIMhbiox/view?usp=drive_link",
 };
 
 export const navLinks = [
