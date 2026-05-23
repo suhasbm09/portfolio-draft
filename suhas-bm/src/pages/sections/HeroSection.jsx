@@ -18,15 +18,15 @@ const HeroSection = React.forwardRef((props, ref) => {
           className="space-y-7"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.35em] text-white/72">
-            <span className="h-1.5 w-1.5 rounded-full bg-white/75" />
+            <span className="theme-dot h-1.5 w-1.5 rounded-full ring-1 ring-white/10" />
             {hero.eyebrow}
           </div>
 
           <div className="space-y-5">
             <p className="text-sm uppercase tracking-[0.45em] text-white/40">{brand.role}</p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-6xl xl:text-7xl">
-              <span className="block">I build dependable backend systems</span>
-              <span className="block text-cyan-100/95">and Solana products.</span>
+              <span className="block">I build backend systems</span>
+              <span className="block text-cyan-100/95">that hold up in production.</span>
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-white/68 md:text-xl">
               {hero.summary}
@@ -53,7 +53,7 @@ const HeroSection = React.forwardRef((props, ref) => {
 
           <div className="grid gap-4 sm:grid-cols-3">
             {hero.metrics.map((metric) => (
-              <div key={metric.label} className="rounded-[1.25rem] border border-white/10 bg-white/[0.02] p-4 backdrop-blur-xl">
+              <div key={metric.label} className="rounded-[1.25rem] border border-white/10 bg-white/2 p-4 backdrop-blur-xl">
                 <p className="text-xs uppercase tracking-[0.3em] text-white/40">{metric.label}</p>
                 <p className="mt-2 text-lg font-semibold text-white/92">{metric.value}</p>
               </div>
@@ -67,11 +67,11 @@ const HeroSection = React.forwardRef((props, ref) => {
           transition={{ duration: 0.9, delay: 0.15 }}
           className="relative"
         >
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-2xl">
+          <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/2 p-6 backdrop-blur-2xl">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.45em] text-white/40">What I focus on</p>
-                <h2 className="mt-2 text-2xl font-semibold text-white">Backend systems with Solana execution</h2>
+                <h2 className="mt-2 text-2xl font-semibold text-white">Backend systems with product-grade execution</h2>
               </div>
               <div className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-white/68">
                 Now
@@ -85,10 +85,10 @@ const HeroSection = React.forwardRef((props, ref) => {
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.25 + index * 0.12 }}
-                  className="flex items-center gap-4 rounded-[1.25rem] border border-white/10 bg-white/[0.02] p-4"
+                  className="flex items-center gap-4 rounded-[1.25rem] border border-white/10 bg-white/2 p-4"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/40 text-white/85">
-                    <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
+                    <span className="theme-dot-core h-2.5 w-2.5 rounded-full ring-1 ring-white/10" />
                   </div>
                   <p className="text-sm leading-6 text-white/78">{signal}</p>
                 </Motion.div>
@@ -96,13 +96,13 @@ const HeroSection = React.forwardRef((props, ref) => {
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.02] p-4">
+              <div className="rounded-[1.25rem] border border-white/10 bg-white/2 p-4">
                 <p className="text-xs uppercase tracking-[0.3em] text-white/40">Location</p>
                 <p className="mt-2 text-sm text-white/75">{brand.location}</p>
               </div>
-              <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.02] p-4">
+              <div className="rounded-[1.25rem] border border-white/10 bg-white/2 p-4">
                 <p className="text-xs uppercase tracking-[0.3em] text-white/40">Status</p>
-                <p className="mt-2 text-sm text-white/75">Open to backend and Solana roles</p>
+                <p className="mt-2 text-sm text-white/75">Open to backend, platform, and Solana roles</p>
               </div>
             </div>
           </div>

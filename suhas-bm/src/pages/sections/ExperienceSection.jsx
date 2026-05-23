@@ -16,10 +16,10 @@ const ExperienceSection = React.forwardRef((props, ref) => (
     <div className="mx-auto max-w-3xl text-center">
       <p className="text-xs uppercase tracking-[0.45em] text-white/40">Experience</p>
       <h2 id="experience-heading" className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-        Work that sharpened my engineering discipline.
+        Professional work that sharpened my delivery discipline.
       </h2>
       <p className="mt-5 text-base leading-7 text-white/65">
-        Enterprise work taught me to care about correctness, validation, and configuration in systems where small mistakes matter.
+        Enterprise work reinforced correctness, validation, and configuration discipline in systems where small mistakes matter.
       </p>
     </div>
 

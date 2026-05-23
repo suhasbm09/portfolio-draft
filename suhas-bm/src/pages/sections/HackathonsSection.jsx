@@ -16,10 +16,10 @@ const HackathonsSection = React.forwardRef((props, ref) => (
     <div className="mx-auto max-w-3xl text-center">
       <p className="text-xs uppercase tracking-[0.45em] text-white/40">Milestones</p>
       <h2 id="hackathons-heading" className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-        Moments that sharpened the portfolio.
+        Delivery milestones that shaped the portfolio.
       </h2>
       <p className="mt-5 text-base leading-7 text-white/65">
-        Competition builds speed, constraints, and resilience—qualities that show up in the final product.
+        Constraints, shipping pressure, and iteration habits show up in the quality of the final product.
       </p>
     </div>
     <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">

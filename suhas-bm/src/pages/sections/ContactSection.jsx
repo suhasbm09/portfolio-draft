@@ -23,24 +23,24 @@ const ContactSection = React.forwardRef((props, ref) => (
       </p>
       <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <Motion.div
-          className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl"
+          className="rounded-[1.75rem] border border-white/10 bg-white/3 p-8 backdrop-blur-2xl"
           whileHover={{ y: -4 }}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/75">
+          <div className="inline-flex rounded-full border border-white/10 bg-white/4 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/75">
             Direct line
           </div>
-          <h3 className="mt-6 text-3xl font-semibold text-white">Open for roles, reviews, and focused collaborations.</h3>
-          <p className="mt-4 max-w-xl text-white/65">If the work needs backend depth, Solana logic, or a product-minded finish, the conversation can start here.</p>
+          <h3 className="mt-6 text-3xl font-semibold text-white">Open for roles and focused collaborations.</h3>
+          <p className="mt-4 max-w-xl text-white/65">If the work needs backend depth, Solana execution, or product judgment, the conversation can start here.</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <a href={`mailto:${brand.email}`} className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-4 transition hover:border-white/20 hover:bg-white/[0.06]">
+            <a href={`mailto:${brand.email}`} className="rounded-[1.25rem] border border-white/10 bg-white/4 p-4 transition hover:border-white/20 hover:bg-white/6">
               <FaEnvelope className="text-2xl text-cyan-300" />
               <p className="mt-3 text-sm uppercase tracking-[0.35em] text-white/35">Email</p>
               <p className="mt-2 text-white/80">{brand.email}</p>
             </a>
-            <a href={`tel:${brand.phone.replace(/\s/g, "")}`} className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-4 transition hover:border-white/20 hover:bg-white/[0.06]">
+            <a href={`tel:${brand.phone.replace(/\s/g, "")}`} className="rounded-[1.25rem] border border-white/10 bg-white/4 p-4 transition hover:border-white/20 hover:bg-white/6">
               <FaPhone className="text-2xl text-cyan-300" />
               <p className="mt-3 text-sm uppercase tracking-[0.35em] text-white/35">Phone</p>
               <p className="mt-2 text-white/80">{brand.phone}</p>
@@ -49,13 +49,13 @@ const ContactSection = React.forwardRef((props, ref) => (
         </Motion.div>
 
         <Motion.div
-          className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl"
+          className="rounded-[1.75rem] border border-white/10 bg-white/3 p-8 backdrop-blur-2xl"
           whileHover={{ scale: 1.02 }}
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/50">
+          <div className="inline-flex rounded-full border border-white/10 bg-white/4 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/50">
             Elsewhere
           </div>
           <h3 className="mt-6 text-2xl font-semibold text-white">Find the work, then the person behind it.</h3>
@@ -64,7 +64,7 @@ const ContactSection = React.forwardRef((props, ref) => (
               href={brand.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]"
+              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/4 px-5 py-3 text-white/80 transition hover:border-white/20 hover:bg-white/6"
             >
               <FaGithub className="text-lg text-cyan-300" /> GitHub
             </a>
@@ -72,7 +72,7 @@ const ContactSection = React.forwardRef((props, ref) => (
               href={brand.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]"
+              className="flex items-center gap-3 rounded-full border border-white/10 bg-white/4 px-5 py-3 text-white/80 transition hover:border-white/20 hover:bg-white/6"
             >
               <FaLinkedin className="text-lg text-cyan-300" /> LinkedIn
             </a>

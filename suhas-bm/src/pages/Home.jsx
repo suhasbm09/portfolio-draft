@@ -4,13 +4,10 @@ import { projects } from "../data/portfolio";
 
 const HeroSection = lazy(() => import("./sections/HeroSection"));
 const AboutSection = lazy(() => import("./sections/AboutSection"));
-const ArticlesSection = lazy(() => import("./sections/ArticlesSection"));
 const SkillsSection = lazy(() => import("./sections/SkillsSection"));
 const ProjectsSection = lazy(() => import("./sections/ProjectsSection"));
 const ExperienceSection = lazy(() => import("./sections/ExperienceSection"));
 const EducationSection = lazy(() => import("./sections/EducationSection"));
-const HackathonsSection = lazy(() => import("./sections/HackathonsSection"));
-const CertificatesSection = lazy(() => import("./sections/CertificatesSection"));
 const ContactSection = lazy(() => import("./sections/ContactSection"));
 
 const Home = () => {
@@ -32,9 +29,6 @@ const Home = () => {
           <AboutSection />
         </Suspense>
         <Suspense fallback={<div className="h-32" />}>
-          <ArticlesSection />
-        </Suspense>
-        <Suspense fallback={<div className="h-32" />}>
           <SkillsSection />
         </Suspense>
         <Suspense fallback={<div className="h-32" />}>
@@ -45,12 +39,6 @@ const Home = () => {
         </Suspense>
         <Suspense fallback={<div className="h-32" />}>
           <EducationSection />
-        </Suspense>
-        <Suspense fallback={<div className="h-32" />}>
-          <HackathonsSection />
-        </Suspense>
-        <Suspense fallback={<div className="h-32" />}>
-          <CertificatesSection />
         </Suspense>
         <Suspense fallback={<div className="h-32" />}>
           <ContactSection />

@@ -6,7 +6,7 @@ import { brand } from "../data/portfolio";
  */
 const SEO = ({ title, description, keywords, image, url }) => {
   const pageTitle = title || brand.name;
-  const metaDescription = description || "Backend engineer and Solana builder focused on reliable APIs, on-chain systems, and product delivery.";
+  const metaDescription = description || "Backend engineer and Solana builder focused on production APIs, on-chain systems, and product delivery.";
   const metaImage = image || "/images/profile.png";
 
   if (typeof document !== "undefined") {

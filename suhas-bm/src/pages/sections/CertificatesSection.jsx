@@ -5,9 +5,9 @@ const CertificatesSection = React.forwardRef((props, ref) => (
   <section id="proof" className="py-20" ref={ref}>
     <div className="mx-auto max-w-3xl text-center">
       <p className="text-xs uppercase tracking-[0.45em] text-white/35">Certification</p>
-      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">One focused credential.</h2>
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">One relevant credential.</h2>
       <p className="mt-5 text-sm leading-7 text-white/60">
-        A single certification that supports the Solana side of the portfolio without pulling focus away from the work.
+        A single certification that supports the blockchain side of the portfolio without pulling focus away from the work.
       </p>
     </div>
     <div className="mx-auto mt-10 max-w-3xl">

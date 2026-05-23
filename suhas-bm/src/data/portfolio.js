@@ -15,39 +15,38 @@ export const navLinks = [
   { label: "Work", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
-  { label: "Proof", href: "#proof" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const hero = {
-  headline: "I build dependable backend systems and Solana products.",
+  headline: "I build backend systems and Solana products that hold up in production.",
   summary:
-    "I design APIs, services, and on-chain workflows that stay understandable in production. My work sits between backend engineering, Solana integration, and disciplined product delivery.",
-  eyebrow: "Backend systems · Solana programs · Product delivery",
+    "I design APIs, service layers, and on-chain workflows with clear ownership, reliable behavior, and clean delivery.",
+  eyebrow: "Backend engineering · Solana execution · Product delivery",
   primaryCta: "See selected work",
   secondaryCta: "Download resume",
   metrics: [
     { label: "Focus", value: "Backend + Solana" },
     { label: "Projects", value: "6 shipped builds" },
-    { label: "Approach", value: "Reliability first" },
+    { label: "Approach", value: "Operate cleanly" },
   ],
   signals: [
-    "APIs and services built to be predictable in production",
-    "Solana programs connected to useful product flows",
-    "Delivery habits shaped around clear handoff and repeatability",
+    "Product-grade APIs, services, and background workflows",
+    "Solana logic shaped for practical product use",
+    "Delivery habits built around clarity and repeatability",
   ],
 };
 
 export const about = {
-  title: "Backend engineering with Solana execution and product clarity.",
+  title: "Backend engineering with systems thinking and product delivery.",
   paragraphs: [
-    "I care about structure first: clean APIs, data integrity, and implementation choices that are easy to maintain over time.",
-    "On the Solana side, I focus on the same standard. The goal is to build program logic and user flows that feel dependable instead of experimental.",
+    "I start with structure: clean APIs, dependable data flow, and implementation choices that stay maintainable over time.",
+    "On Solana, I hold the same standard. The goal is to ship program logic and product flows that feel dependable in production.",
   ],
   highlights: [
     {
       title: "Backend systems",
-      text: "API design, service boundaries, data validation, and deployment patterns that hold up in production.",
+      text: "API design, service boundaries, validation, and deployment patterns that hold up in production.",
     },
     {
       title: "Solana engineering",
@@ -55,7 +54,7 @@ export const about = {
     },
     {
       title: "Delivery discipline",
-      text: "Containerized environments, CI pipelines, and release habits that keep iteration calm.",
+      text: "Containerized environments, CI pipelines, and release habits that keep iteration predictable.",
     },
     {
       title: "Data and operations",
@@ -69,13 +68,13 @@ export const stackGroups = [
     title: "Languages",
     icon: "C++ / Python / JavaScript / Rust",
     items: ["C++", "Python", "JavaScript", "Rust"],
-    note: "Core languages for algorithms, APIs, and on-chain work.",
+    note: "Core languages for APIs, systems, and on-chain work.",
   },
   {
     title: "Backend systems",
     icon: "Flask / Node.js / Express",
     items: ["Flask", "Node.js", "Express", "Firebase"],
-    note: "Service layers, auth, orchestration, and data access.",
+    note: "Service layers, orchestration, and data access.",
   },
   {
     title: "Solana stack",
@@ -93,26 +92,24 @@ export const stackGroups = [
 
 export const projects = [
   {
-    key: "skillflex",
-    title: "SkillFlex",
-    category: "Solana credentialing dApp",
+    key: "signum",
+    title: "Signum",
+    category: "Flagship AI learning platform",
     summary:
-      "A proof-of-skill platform where users complete challenges, receive AI evaluation, and mint non-transferable credentials on Solana.",
-    impact: "Turns verification into a user-owned, on-chain asset.",
-    image: "/images/skillflex.png",
-    stack: ["Solana", "Anchor", "Rust", "React", "Flask", "MongoDB", "IPFS"],
-    links: {
-      github: "https://github.com/suhasbm09/SKILL_FLEX",
-    },
+      "A flagship AI tutoring and assessment platform built with Gemini, retrieval-augmented generation, screen-aware context, and integrity controls for quizzes and coding assessments.",
+    impact: "Combines learning context, live assistance, and assessment integrity into one dependable workflow.",
+    image: "/images/signum.png",
+    featured: true,
+    stack: ["React", "FastAPI", "Gemini 2.5 Flash", "RAG", "Firestore", "Web Speech API"],
     outcome: [
-      "Monaco-like editor experience for structured submissions",
-      "AI scoring flow connected to minting logic",
-      "Soulbound credentials stored with IPFS metadata",
+      "Course-aware answers grounded in retrieved material and recent conversation history",
+      "Voice input and strict response formatting that keep tutoring fast and readable",
+      "Progressive anti-cheat monitoring for quiz and coding assessment workflows",
     ],
     architecture: [
-      "Frontend submission flow with challenge state and evaluation feedback",
-      "Backend scoring and validation pipeline before mint eligibility",
-      "Anchor program for credential minting and metadata anchoring",
+      "Three AI pipelines for Q&A, code evaluation, and anti-cheat orchestration",
+      "Prompt augmentation that blends course context, screen text, and conversation history",
+      "Client-side violation detection with backend block status checks and expiry handling",
     ],
   },
   {
@@ -236,16 +233,16 @@ export const projects = [
 export const experience = [
   {
     period: "Jan 2026 – Present",
-    title: "PSI Intern — Pro Suite Implementation",
+    title: "Implementation Intern — UKG Pro Suite",
     org: "UKG",
     location: "Enterprise payroll systems",
     summary:
-      "Supporting UKG Pro HCM payroll implementation work with a focus on validation, configuration accuracy, and controlled reporting workflows.",
+      "Supporting UKG Pro HCM payroll implementation work with a focus on register automation, validation accuracy, and controlled reporting workflows.",
     bullets: [
-      "Validate payroll scenarios using Payroll Compare and Wage Validation to catch configuration and data issues early.",
-      "Support earnings, deductions, and tax setup inside a controlled UKG Pro HCM implementation flow.",
-      "Review role-based access and reporting paths to keep operations and validation aligned.",
-      "Work in a delivery environment where accuracy, consistency, and repeatability matter more than surface polish.",
+      "Built Excel VBA automation to process payroll register data and generate standardized earnings, deductions, and tax reports from structured templates.",
+      "Designed modular handlers for different payroll register formats, reducing manual processing time from around 4 hours to under 40 minutes during internal testing.",
+      "Worked with payroll validation and reporting workflows, including Payroll Compare, wage validation, and report mapping across enterprise implementation environments.",
+      "Gained practical exposure to enterprise payroll configuration, data quality validation, and cross-functional implementation support in UKG Pro systems.",
     ],
   },
 ];
@@ -256,15 +253,15 @@ export const education = [
     title: "B.E. Computer Science and Engineering",
     org: "The National Institute of Engineering, Mysuru",
     location: "CGPA: 9.17 / 10",
-    summary: "Current undergraduate program with a cumulative CGPA of 9.17 / 10.",
+    summary: "Computer science training with a cumulative CGPA of 9.17 / 10.",
     bullets: [],
   },
   {
     period: "2020 – 2022",
-    title: "Pre-University (PCMB)",
+    title: "Pre-university, PCMB",
     org: "Vijaya Vittala PU Composite",
     location: "95.5%",
-    summary: "Physics, Chemistry, Mathematics, Computer Science track.",
+    summary: "Physics, Chemistry, Mathematics, and Computer Science track.",
     bullets: ["95.5% aggregate across physics, chemistry, mathematics, and CS"],
   },
 ];
@@ -273,24 +270,24 @@ export const certifications = [
   {
     title: "Acke School of Blockchain — Solana Development Program",
     type: "Blockchain",
-    description: "Focused Solana development training and on-chain building practice.",
+    description: "Solana development training with hands-on on-chain implementation practice.",
   },
 ];
 
 export const milestones = [
   {
-    title: "Solana OutBreak 2025",
-    badge: "Participant",
-    detail: "Built the initial prototype of SkillFlex for AI-evaluated skill credentials.",
+    title: "Signum",
+    badge: "Flagship build",
+    detail: "Built a Gemini-powered learning platform with retrieval, context awareness, and integrity controls.",
   },
   {
     title: "Inohax 2.0",
     badge: "Top 5 / 30+ teams",
-    detail: "Developed Vionex, a blockchain medicine donation system with AI fraud detection.",
+    detail: "Developed Vionex, a blockchain medicine donation system with AI-assisted fraud detection.",
   },
   {
     title: "Code For Bharat Season 2",
-    badge: "Participant",
+    badge: "Builder",
     detail: "Created VORTEX, a decentralized social platform using Solana and content verification.",
   },
 ];
@@ -312,6 +309,6 @@ export const principles = [
 
 export const contact = {
   summary:
-    "Open to backend and Solana roles where reliability, systems thinking, and product polish matter.",
-  availability: "Available for full-time opportunities and focused freelance collaborations.",
+    "Open to backend and Solana roles where system design, delivery discipline, and product judgment matter.",
+  availability: "Available for full-time opportunities and selective project work.",
 };

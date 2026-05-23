@@ -14,15 +14,15 @@ const EducationSection = React.forwardRef((props, ref) => (
     ref={ref}
   >
     <div className="mx-auto max-w-3xl text-center">
-      <p className="text-xs uppercase tracking-[0.45em] text-white/40">Academic foundation</p>
+      <p className="text-xs uppercase tracking-[0.45em] text-white/40">Education</p>
       <h2 id="education-heading" className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-        Established in systems fundamentals.
+        Built on systems fundamentals.
       </h2>
       <p className="mt-5 text-base leading-7 text-white/65">
-        Rigorous coursework in systems, networks, and data structures built the technical foundation for backend engineering.
+        Coursework in systems, networks, and data structures created the technical base for backend and platform work.
       </p>
     </div>
-    <div className="mx-auto mt-16 max-w-4xl">
+    <div className="education-section mx-auto mt-16 max-w-4xl">
       <div className="relative">
         {/* Timeline line */}
         <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400/0 via-cyan-400/30 to-indigo-500/0" />
